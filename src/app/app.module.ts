@@ -8,6 +8,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
 import { ManageProductsComponent } from './admin/manage-products/manage-products.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ManageProductsComponent } from './admin/manage-products/manage-products
     ShoppingCartComponent,
     OrdersComponent,
     ManageOrdersComponent,
-    ManageProductsComponent
+    ManageProductsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
