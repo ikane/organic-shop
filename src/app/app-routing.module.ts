@@ -7,16 +7,19 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { LoginComponent } from './login/login.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent },
   {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: 'check-out', component: CheckOutComponent},
+  {path: 'order-success', component: OrderSuccessComponent},
   {path: 'my/orders', component: MyOrdersComponent},
   {path: 'admin/products', component: AdminProductsComponent},
   {path: 'admin/orders', component: AdminOrdersComponent},
   {path: 'login', component: LoginComponent},
-  {path: '', redirectTo: 'shopping-cart', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent}
 ];
 
