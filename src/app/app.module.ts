@@ -23,6 +23,7 @@ import { AuthService } from './auth.service';
 import { ProductsComponent } from './products/products.component';
 import { AuthGuard } from './auth-guard.service';
 import { Router, ActivatedRouteSnapshot } from '@angular/router';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { Router, ActivatedRouteSnapshot } from '@angular/router';
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
