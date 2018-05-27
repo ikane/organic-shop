@@ -22,6 +22,7 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { AuthService } from './auth.service';
 import { ProductsComponent } from './products/products.component';
 import { AuthGuard } from './auth-guard.service';
+import { Router, ActivatedRouteSnapshot } from '@angular/router';
 
 @NgModule({
   declarations: [
