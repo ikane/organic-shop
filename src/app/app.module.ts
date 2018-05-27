@@ -19,6 +19,8 @@ import { environment } from '../environments/environment';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
+import { AuthService } from './auth.service';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
     AdminOrdersComponent,
     BsNavbarComponent,
     CheckOutComponent,
-    OrderSuccessComponent
+    OrderSuccessComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,9 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

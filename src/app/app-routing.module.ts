@@ -9,11 +9,13 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { LoginComponent } from './login/login.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
+import { ProductsComponent } from './products/products.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
   {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: 'products', component: ProductsComponent},
   {path: 'check-out', component: CheckOutComponent},
   {path: 'order-success', component: OrderSuccessComponent},
   {path: 'my/orders', component: MyOrdersComponent},
