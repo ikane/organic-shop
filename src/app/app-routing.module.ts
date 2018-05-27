@@ -10,18 +10,24 @@ import { LoginComponent } from './login/login.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { ProductsComponent } from './products/products.component';
+import { AuthGuard } from './auth-guard.service';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'products', component: ProductsComponent},
-  {path: 'check-out', component: CheckOutComponent},
-  {path: 'order-success', component: OrderSuccessComponent},
-  {path: 'my/orders', component: MyOrdersComponent},
-  {path: 'admin/products', component: AdminProductsComponent},
-  {path: 'admin/orders', component: AdminOrdersComponent},
   {path: 'login', component: LoginComponent},
+  // tslint:disable-next-line:no-trailing-whitespace
+  
+  {path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard]},
+  {path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard]},
+  {path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard]},
+
+  {path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard]},
+  {path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard]},
+  // tslint:disable-next-line:no-trailing-whitespace
+  
   {path: '**', component: PageNotFoundComponent}
 ];
 

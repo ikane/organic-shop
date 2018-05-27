@@ -21,6 +21,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { AuthService } from './auth.service';
 import { ProductsComponent } from './products/products.component';
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ProductsComponent } from './products/products.component';
     AngularFireAuthModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
