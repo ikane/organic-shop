@@ -11,6 +11,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { ProductsComponent } from './products/products.component';
 import { AuthGuard } from './auth-guard.service';
+import { AdminAuthGuard } from './admin-auth-guard.service';
 
 
 const routes: Routes = [
@@ -24,8 +25,16 @@ const routes: Routes = [
   {path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard]},
   {path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard]},
 
-  {path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard]},
-  {path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard]},
+  {
+    path: 'admin/products',
+    component: AdminProductsComponent,
+    canActivate: [AuthGuard, AdminAuthGuard]
+  },
+  {
+    path: 'admin/orders',
+    component: AdminOrdersComponent,
+    canActivate: [AuthGuard, AdminAuthGuard]
+  },
   // tslint:disable-next-line:no-trailing-whitespace
   
   {path: '**', component: PageNotFoundComponent}

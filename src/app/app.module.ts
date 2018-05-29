@@ -24,6 +24,7 @@ import { ProductsComponent } from './products/products.component';
 import { AuthGuard } from './auth-guard.service';
 import { Router, ActivatedRouteSnapshot } from '@angular/router';
 import { UserService } from './user.service';
+import { AdminAuthGuard } from './admin-auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { UserService } from './user.service';
   providers: [
     AuthService,
     AuthGuard,
+    AdminAuthGuard,
     UserService
   ],
   bootstrap: [AppComponent]
