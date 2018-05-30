@@ -25,6 +25,7 @@ import { AuthGuard } from './auth-guard.service';
 import { Router, ActivatedRouteSnapshot } from '@angular/router';
 import { UserService } from './user.service';
 import { AdminAuthGuard } from './admin-auth-guard.service';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AdminAuthGuard } from './admin-auth-guard.service';
     BsNavbarComponent,
     CheckOutComponent,
     OrderSuccessComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
