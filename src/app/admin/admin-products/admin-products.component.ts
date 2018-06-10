@@ -36,12 +36,16 @@ export class AdminProductsComponent implements OnInit {
           changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
         )
       );
-    
+
       // this.products$.subscribe(p => console.log(p));
 
    }
 
   ngOnInit() {
+  }
+
+  filter(query) {
+    console.log(query);
   }
 
 }
