@@ -8,9 +8,11 @@ import { map } from 'rxjs/operators';
   templateUrl: './admin-products.component.html',
   styleUrls: ['./admin-products.component.css']
 })
-export class AdminProductsComponent implements OnInit {
+export class AdminProductsComponent {
 
   products$;
+  products:{title:string}[];
+  filteredProducts:any[];
 
   constructor(private productService: ProductService) {
     // this.products$ = this.productService.getAll();
@@ -37,15 +39,17 @@ export class AdminProductsComponent implements OnInit {
         )
       );
 
-      // this.products$.subscribe(p => console.log(p));
+      this.products$.subscribe(p => this.filteredProducts = this.products = p);
 
    }
 
-  ngOnInit() {
-  }
 
-  filter(query) {
-    console.log(query);
+  filter(query: string) {
+    
+    this.filteredProducts = (query) ?
+          this.products.filter(p => p.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())):
+          this.products
+          ;
   }
 
 }
