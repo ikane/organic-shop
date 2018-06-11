@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../product.service';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-admin-products',
@@ -11,8 +12,8 @@ import { map } from 'rxjs/operators';
 export class AdminProductsComponent {
 
   products$;
-  products:{title:string}[];
-  filteredProducts:any[];
+  products: Product[];
+  filteredProducts: Product[];
 
   constructor(private productService: ProductService) {
     // this.products$ = this.productService.getAll();
